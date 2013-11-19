@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+	Jefferson Lam
+	11-19-13
+	jQuery : Disappearing Images Page
+-->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery : Image Disappaer/Reappear</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	
+	<link rel="stylesheet" type="text/css" href="global.css">
+
+	<!--jQuery-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		
+    		$('img').click(function(){
+    			$(this).fadeOut(300);
+    		});
+    		$('img').hover(
+		        function () {
+		           $(this).css('opacity', '0.9');
+		        }, 
+		        function () {
+		           $(this).css('opacity', '1');
+		        }
+    		);
+    		$('#restore').click(function(){
+    			$('img').fadeIn();
+    		});
+    	});
+    	
+    </script>
+</head>
+<body>
+	<div class="container">
+		<div class="image-area">
+			<div class="image-container"><img src="1.jpg"></div>
+			<div class="image-container"><img src="2.jpg"></div>
+			<div class="image-container"><img src="3.jpg"></div>
+			<div class="image-container"><img src="4.jpg"></div>
+			<div class="image-container"><img src="5.jpg"></div>
+			<div class="image-container"><img src="6.jpg"></div>
+			<div class="image-container"><img src="7.jpg"></div>
+			<div class="image-container"><img src="8.jpg"></div>
+		</div>
+		<button id="restore">Restore</button>
+	</div>
+</body>
+</html>
